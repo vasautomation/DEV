@@ -1,14 +1,11 @@
-module "server" {
-  source = "./modules/ec2"
+provider "aws" {
+  region = "us-east-1"
 }
-
-
-resource "aws_instance" "this" {
-  ami           = var.ami-0945610b37068d87a
-  instance_type = var."t2.micro"
-  subnet_id     = var.subnet-08c5fe668d4dbbb71
-  
-  tags = {
+resource "aws_instance" "one" {
+  count         = 2
+  ami           = "ami-0945610b37068d87a"
+  instance_type = "t2.micro"
+    tags = {
     Name = "GitTerraform"
   }
 }
