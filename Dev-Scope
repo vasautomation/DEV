@@ -1,1 +1,98 @@
-CODING standards
+📋 Code Review Standards
+1. General Guidelines
+
+Reviews must be completed before merging any pull request (PR).
+
+At least one peer review (preferably two for critical code).
+
+No direct commits to the main/master branch.
+
+Focus on code quality, readability, security, and maintainability—not personal style preferences.
+
+Be constructive: suggest improvements instead of just pointing out issues.
+
+2. Code Quality & Readability
+
+✅ Follow coding standards (Java: Google Style, Python: PEP8, JavaScript: ESLint/Prettier, etc.).
+✅ Use meaningful, descriptive names for variables, methods, classes, and files.
+✅ Keep functions small, single-purpose, and modular.
+✅ Avoid code duplication—extract reusable components or methods.
+✅ Ensure proper comments and documentation (only where logic is non-trivial).
+✅ Check for consistent indentation, spacing, and formatting.
+✅ Ensure logs are meaningful and not excessive.
+
+3. Functionality & Correctness
+
+✅ Code should meet the requirements of the ticket/user story.
+✅ Validate input/output correctness and error handling.
+✅ Confirm edge cases and boundary conditions are handled.
+✅ Unit tests must be included/updated for new functionality.
+✅ Automated tests should pass locally & in CI/CD pipelines.
+
+4. Security & Reliability
+
+✅ No hardcoded secrets, passwords, or tokens.
+✅ Validate input sanitization to prevent injection attacks.
+✅ Ensure secure API calls (e.g., HTTPS, auth checks).
+✅ Avoid using deprecated libraries or methods.
+✅ Validate exception handling (no silent failures).
+
+5. Performance & Scalability
+
+✅ Avoid unnecessary loops, nested iterations, or heavy computations.
+✅ Use efficient data structures and algorithms.
+✅ Minimize API/database calls—batch or cache when possible.
+✅ Ensure code does not introduce memory leaks or excessive resource usage.
+
+6. Testing Standards
+
+✅ Unit tests must cover at least 70–80% of new code.
+✅ Write integration tests for critical features.
+✅ Ensure test names are descriptive and meaningful.
+✅ Avoid brittle/flaky tests.
+✅ Mock dependencies in unit tests.
+
+7. CI/CD & Deployment
+
+✅ Code must pass all linting, formatting, and static analysis checks.
+✅ All tests must pass in the pipeline before merging.
+✅ PR should be linked to Jira/GitHub issue ID.
+✅ Reviewers should verify build artifacts & deployment scripts.
+
+8. Pull Request (PR) Best Practices
+
+PR title should be clear & descriptive (e.g., Fix: API timeout issue in Auth Service).
+
+Keep PRs small and focused (large PRs are harder to review).
+
+PR description should include:
+
+What was changed
+
+Why it was changed
+
+How it was tested
+
+Reviewers must check for merge conflicts before approval.
+
+9. Reviewer Responsibilities
+
+Ask questions instead of making assumptions.
+
+Suggest alternatives with examples when possible.
+
+Approve only when all issues are addressed.
+
+Use labels (LGTM, Needs Changes, Minor Suggestion) consistently.
+
+10. Author Responsibilities
+
+Self-review before submitting a PR.
+
+Provide adequate documentation & comments.
+
+Respond promptly to review comments.
+
+Don’t merge until all reviewers approve.
+
+Keep PRs up-to-date with the base branch.
